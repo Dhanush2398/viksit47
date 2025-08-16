@@ -708,7 +708,7 @@ input {
 }
 
 a.btn-icon {
-  background: #f1f1f1 none repeat scroll 0 0;
+  background: z none repeat scroll 0 0;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -3112,7 +3112,7 @@ body, .banner-area,
 }
 
 .popular-courses-items .info {
-  background: var(--white) none repeat scroll 0 0;
+  background: #002147 none repeat scroll 0 0;
   overflow: hidden;
   padding: 30px;
 }
@@ -3159,7 +3159,7 @@ body, .banner-area,
 }
 
 .popular-courses .author-info .rating span {
-  color: var(--color-heading);
+  color: #fff;
 }
 
 .popular-courses-items .author-info .others .rating i {
@@ -4804,7 +4804,7 @@ body, .banner-area,
 }
 
 .event-area .event-items .item .info {
-  background: var(--white) none repeat scroll 0 0;
+  background: #1EC1D9 none repeat scroll 0 0;
 }
 
 .event-area.circle .event-items .item > .info {
@@ -8853,15 +8853,14 @@ nav.navbar.validnavs .navbar-brand > img {
   }
 }
 
-.popular-courses{
-  background-color: #002147;
-}
+
 .site-heading h2{
-  color: #fff;
+  color: #002147;
 }
-.event-area{
-  background-color: #1EC1D9;
-}
+
 .our-features{
   background-color: #FD1309;
+}
+.info h4 a{
+  color: #fff !important;
 }
