@@ -1733,7 +1733,7 @@ body, .banner-area,
   -moz-transition: all 0.35s ease-in-out;
   -ms-transition: all 0.35s ease-in-out;
   -o-transition: all 0.35s ease-in-out;
-  background-color: var(--white);
+  background-color: #002147;
 }
 
 .about-area.bg-dark .our-features .item {
