@@ -406,3 +406,50 @@
     });
 
 })(jQuery); // End jQuery
+
+  const perPage = 6; 
+  let currentPage = 0;
+
+  const questions = document.querySelectorAll(".question");
+  const totalQ = questions.length;
+  document.getElementById("totalQ").innerText = totalQ;
+
+  function updateAttempted() {
+    let attempted = 0;
+    questions.forEach((q, i) => {
+      if(q.querySelector("input:checked")) attempted++;
+    });
+    document.getElementById("attemptedQ").innerText = attempted;
+  }
+
+  function loadPage() {
+    questions.forEach((q, i) => {
+      q.style.display = (i >= currentPage * perPage && i < (currentPage+1)*perPage) ? "block" : "none";
+    });
+    document.getElementById("prev-btn").disabled = currentPage === 0;
+    document.getElementById("next-btn").style.display = ((currentPage+1)*perPage >= totalQ) ? "none" : "inline-block";
+    document.getElementById("submit-btn").style.display = ((currentPage+1)*perPage >= totalQ) ? "inline-block" : "none";
+    updateAttempted();
+  }
+
+  function nextPage() {
+    currentPage++;
+    loadPage();
+  }
+
+  function prevPage() {
+    currentPage--;
+    loadPage();
+  }
+
+  function submitTest() {
+    updateAttempted();
+    document.getElementById("quiz-box").style.display = "none";
+    document.querySelector(".navigation").style.display = "none";
+    document.querySelector(".status").style.display = "none";
+    document.getElementById("result").style.display = "block";
+    document.getElementById("result").innerText = `You attempted ${document.getElementById("attemptedQ").innerText} out of ${totalQ} questions.`;
+  }
+
+  document.addEventListener("change", updateAttempted);
+  loadPage();
